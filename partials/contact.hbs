@@ -30,9 +30,12 @@
     {{#if profiles.length}}
     {{#each profiles}}
     <div class="item">
-        <div class="icon pull-left text-center"><span class="fab fa-{{toLowerCase network}} fa-fw"></span></div>
-        <div class="title pull-right">{{network}}</div>
-        <div class="description pull-right"><a href="{{url}}" target="_blank">{{#if username}}{{username}}{{/if}}{{#if username}}{{/if}}</a></div>
+	{{#if (eq (toLowerCase network) 'sourcehut')}}
+	        <div class="icon pull-left text-center"><span class="fas fa-code fa-fw"></span></div>
+	{{else}}
+	        <div class="icon pull-left text-center"><span class="fab fa-{{toLowerCase network}} fa-fw"></span></div>
+	{{/if}}
+        <div class="title only pull-right"><a href="{{url}}" target="_blank">{{network}}</a></div>
     </div>
     {{/each}}
 	{{/if}}

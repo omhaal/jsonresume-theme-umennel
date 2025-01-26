@@ -40,6 +40,10 @@ function render(resume) {
 		return array.join(separator);
 	});
 
+	Handlebars.registerHelper('eq', function (a, b) {
+            return a == b;
+	});
+
 	return Handlebars.compile(tpl)({
 		bootstrapcss: bootstrapcss,
 		css: css,
